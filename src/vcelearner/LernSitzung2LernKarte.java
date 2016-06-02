@@ -52,7 +52,7 @@ public class LernSitzung2LernKarte {
             pst = con.prepareStatement(Sql);
             pst.setInt(1, lS2lK.getLernSitzung_id());
             pst.setInt(2, lS2lK.getLernkarte_id());
-            pst.setString(3, "" + lS2lK.isGemogelt());
+            pst.setString(3, String.valueOf(lS2lK.isGemogelt()));
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

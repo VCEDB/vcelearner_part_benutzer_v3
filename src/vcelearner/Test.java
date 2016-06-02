@@ -87,5 +87,59 @@ public class Test {
 //    System.out.println(lS2lK.toString());
 //    System.out.println(lS2pA.toString());
 //    System.out.println(lS2pA1.toString());
+
+        Benutzer user = new Benutzer(1, "chef", "abc", "vorname", "nachname");
+        
+        
+        LernKarte lk1 = new LernKarte(1, "frage", 0);
+        ArrayList<PotentielleAntwort> pAs1 = new ArrayList<>();
+        PotentielleAntwort pA1 = new PotentielleAntwort(true, "antwort1", 1);
+        pA1.setId(1);
+        PotentielleAntwort pA2 = new PotentielleAntwort(false, "antwort2", 1);
+        pA2.setId(2);
+        
+        pAs1.add(pA1);
+        pAs1.add(pA2);
+        lk1.setpAs(pAs1);
+        boolean wv1= false;
+        
+        
+       
+        
+        
+        LernKarte lk2 = new LernKarte(2, "frage", 0);
+        ArrayList<PotentielleAntwort> pAs2 = new ArrayList<>();
+        PotentielleAntwort pA3 = new PotentielleAntwort(true, "antwort3", 2);
+        pA3.setId(3);
+        PotentielleAntwort pA4 = new PotentielleAntwort(false, "antwort4", 2);
+        pA4.setId(4);
+        pAs2.add(pA3);
+        pAs2.add(pA4);
+        lk2.setpAs(pAs2);
+        boolean wv2= true;
+        
+        
+        
+        ArrayList<LernKarte> lKs =new ArrayList<>();
+        lKs.add(lk1);
+        lKs.add(lk2);
+        
+        LernSitzung lernSitzung = new LernSitzung(1, "ungewertet", "datum", 1);
+        
+        BenutzerSitzung benutzerSitzung = new BenutzerSitzung(user, lKs, lernSitzung);
+        //benutzerSitzung.getsLKs().get(0).setGemogeltTrue();
+        benutzerSitzung.getsLKs().get(0).setGegebeneAntworten(pAs1);
+        benutzerSitzung.getsLKs().get(0).setWiederVorlage(wv1);
+        benutzerSitzung.getsLKs().get(1).setGegebeneAntworten(pAs2);
+        benutzerSitzung.getsLKs().get(1).setGemogeltTrue();
+        benutzerSitzung.getsLKs().get(1).setWiederVorlage(wv2);
+//        System.out.println(benutzerSitzung.toString());
+
+        System.out.println(benutzerSitzung);
+        BenutzerSitzung.insert(benutzerSitzung);
+
+      
+
+
     }
 }

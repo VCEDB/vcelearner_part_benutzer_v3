@@ -210,9 +210,11 @@ public class PotentielleAntwort {
 //    public String toString() {
 //        return "PotentielleAntwort{" + "id=" + id + ", richtigkeit=" + richtigkeit + ", antwort=" + antwort + ", lernKarte_id=" + lernKarte_id + '}';
 //    }
+
     @Override
     public String toString() {
-        return antwort + "/" + richtigkeit;
+        return "PotentielleAntwort{" + "id=" + id + ", richtigkeit=" + richtigkeit + ", antwort=" + antwort + ", lernKarte_id=" + lernKarte_id + '}';
     }
+
 
 }
